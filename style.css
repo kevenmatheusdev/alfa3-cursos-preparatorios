@@ -76,6 +76,16 @@ footer .brand-image{width:210px}
 .faq details[open] summary:after{background:var(--gold);border-color:var(--gold);color:#161810}
 .faq details p{font-size:13px;line-height:1.85;color:#6b7164;padding:0 35px 22px 0;max-width:680px}
 @media(max-width:760px){.location:after{width:calc(100% - 40px)}.faq{padding:78px 0 70px}.faq:before{width:calc(100% - 40px);margin-bottom:35px;padding-top:16px}.faq-grid{gap:34px}.faq .body-copy{margin-top:20px;max-width:320px}.faq-list{gap:8px}.faq details{padding-inline:17px}.faq summary{font-size:13px;padding:19px 31px 19px 0}.faq summary:after{top:15px}.faq details p{font-size:12px;padding-right:8px;padding-bottom:19px}}
+@media(max-width:850px){
+ .faq-grid{grid-template-columns:1fr;gap:34px}
+ .faq h2{font-size:clamp(35px,8vw,48px);max-width:520px}
+ .faq .body-copy{max-width:390px}
+ .faq-list{width:100%}
+ .location-grid{grid-template-columns:1fr;gap:34px}
+ .location h2{font-size:clamp(38px,8vw,52px);max-width:520px}
+ .location .body-copy{max-width:500px}
+ .map-placeholder{width:100%;min-height:330px}
+}
 @keyframes hero-reveal{
   from{opacity:0;transform:translateY(16px)}
   to{opacity:1;transform:translateY(0)}
