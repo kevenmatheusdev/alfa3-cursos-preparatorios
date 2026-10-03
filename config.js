@@ -1,6 +1,11 @@
 /* Conteúdo editável. Campos vazios nunca representam informações confirmadas.
    Não coloque senhas, chaves privadas ou dados de alunos neste arquivo público. */
 window.ALFA3_CONFIG = {
+  // Chave publicável: pode ser usada no navegador. Nunca coloque aqui uma secret/service_role key.
+  supabase: {
+    url: 'https://qwnvrubsxrbibtdeauaz.supabase.co',
+    publishableKey: 'sb_publishable_3wStjoXwJvLbLtwxarx2iw_EwiKJHPY'
+  },
   brand: { logoLight: 'assets/logo.png', logoDark: '', heroPhoto: 'assets/estudantes-hero.png', heroPhotoAlt: 'Cena ilustrativa de dois estudantes pulando e comemorando, com roupas amarelas e fundo preto.', heroIllustrative: true },
   courses: [
     { id: 'enem', number: '01', tag: 'SEU CAMINHO PARA A UNIVERSIDADE', title: 'Pré-vestibular / ENEM', description: 'Uma base forte para transformar dedicação em novas possibilidades.', audience: 'Para estudantes do 3º ano e egressos.', subjects: ['Linguagens e Matemática', 'Ciências e Redação'], duration: '', icon: 'book' },
@@ -42,6 +47,6 @@ window.ALFA3_CONFIG = {
   contacts: { whatsapp: '', instagram: '', email: '', hours: '' },
   enrollment: {
     // Ativar SOMENTE após integrar e auditar persistência, proteção e administração.
-    demo: true, enabled: false, endpoint: '', privacyUrl: '', termsUrl: '', confirmationRule: 'Esta é uma pré-matrícula. A equipe entrará em contato para apresentar as condições e efetivar a matrícula. O envio não garante vaga nem confirma pagamento.', nextStep: 'Nossa equipe entrará em contato pelos dados informados para orientar você e efetivar a matrícula.'
+    demo: false, enabled: true, endpoint: '', privacyUrl: '#', termsUrl: '#', confirmationRule: 'Esta é uma pré-matrícula. A equipe entrará em contato para apresentar as condições e efetivar a matrícula. O envio não garante vaga nem confirma pagamento.', nextStep: 'Nossa equipe entrará em contato pelos dados informados para orientar você e efetivar a matrícula.'
   }
 };
