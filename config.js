@@ -43,7 +43,7 @@ window.ALFA3_CONFIG = {
   // {name, subjects:[], modalities:[], specialties, bio, photo, photoAlt}
   teachers: [],
   campaign: { enabled: false, courses: [], discountBase: '', discountDuration: '', writingConditions: '', countingRule: '', conditions: '' },
-  location: { confirmed: false, address: '', neighborhood: '', city: '', state: '', reference: '', hours: '', mapsUrl: '', embedUrl: '', photo: '' },
+  location: { confirmed: true, address: 'Cajazeiras, Paraíba', neighborhood: '', city: 'Cajazeiras', state: 'PB', reference: 'Sertão Paraibano', hours: '', mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Cajazeiras%2C%20Para%C3%ADba', embedUrl: '', photo: '' },
   contacts: { whatsapp: '55 83 98142-8978', instagram: '', email: '', hours: '' },
   enrollment: {
     // Ativar SOMENTE após integrar e auditar persistência, proteção e administração.
