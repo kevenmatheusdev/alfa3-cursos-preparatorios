@@ -18,6 +18,9 @@
   };
   const available = config.classes.filter(item => item.available === true && item.id && item.name && item.shift && config.courses.some(course => course.id === item.modality));
   const enrollment = config.enrollment;
+  const cityField = $('#city')?.closest('.form-grid > div');
+  const stateField = $('#state')?.closest('.form-grid > div');
+  if (cityField && stateField) cityField.parentNode.insertBefore(stateField, cityField);
   const demo = enrollment.demo === true;
   const ready = !demo && enrollment.enabled === true && config.supabase?.url && config.supabase?.publishableKey && url(enrollment.privacyUrl) && url(enrollment.termsUrl) && enrollment.confirmationRule && enrollment.nextStep;
   const paths = { book: '<path d="M3 4h6l3 2 3-2h6v15h-6l-3 2-3-2H3zM12 6v15"/>', building: '<path d="m3 8 9-5 9 5H3ZM5 10v8m5-8v8m4-8v8m5-8v8M3 21h18"/>', bolt: '<path d="m13 2-9 12h7l-1 8 10-13h-8z"/>', pen: '<path d="m15 4 5 5M4 20l5-1L21 7l-4-4L5 15zM4 20h16"/>' };
