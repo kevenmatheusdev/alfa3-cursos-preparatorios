@@ -95,10 +95,7 @@
   if (address.confirmed && address.address && address.city && address.state) {
     $('#location-details').innerHTML = `<p class="body-copy"><strong>${escape(address.address)}</strong><br>${escape([address.neighborhood, address.city, address.state].filter(Boolean).join(' · '))}</p>${address.reference ? `<p>${escape(address.reference)}</p>` : ''}${address.hours ? `<p class="body-copy">${escape(address.hours)}</p>` : ''}${url(address.mapsUrl) ? `<a class="button button-outline" href="${escape(url(address.mapsUrl))}" target="_blank" rel="noopener noreferrer">Como chegar ↗</a>` : ''}`;
     if (address.photo) $('#map').innerHTML = media(address.photo, 'Unidade ALFA3');
-    if (url(address.embedUrl) && /^https:\/\/(www\.)?google\.com\/maps\//.test(address.embedUrl)) {
-      $('#map').innerHTML = '<button type="button" class="button button-outline" id="load-map">Carregar mapa do Google Maps ↗</button>';
-      $('#load-map').addEventListener('click', () => { $('#map').innerHTML = `<iframe src="${escape(url(address.embedUrl))}" title="Localização da ALFA3 no Google Maps" loading="lazy" referrerpolicy="no-referrer" allowfullscreen></iframe>`; });
-    }
+    if (url(address.embedUrl) && /^https:\/\/(www\.)?google\.com\/maps/.test(address.embedUrl)) $('#map').innerHTML = `<iframe src="${escape(url(address.embedUrl))}" title="Localização da ALFA3 no Google Maps" loading="lazy" referrerpolicy="no-referrer" allowfullscreen></iframe>`;
     $$('#duvidas details').at(-1).querySelector('p').textContent = `${address.address}, ${address.city}/${address.state}. ${address.hours || ''}`;
   }
   const contacts = config.contacts;
