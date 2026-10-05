@@ -44,7 +44,7 @@ window.ALFA3_CONFIG = {
   teachers: [],
   campaign: { enabled: false, courses: [], discountBase: '', discountDuration: '', writingConditions: '', countingRule: '', conditions: '' },
   location: { confirmed: false, address: '', neighborhood: '', city: '', state: '', reference: '', hours: '', mapsUrl: '', embedUrl: '', photo: '' },
-  contacts: { whatsapp: '83 98142-8978', instagram: '', email: '', hours: '' },
+  contacts: { whatsapp: '55 83 98142-8978', instagram: '', email: '', hours: '' },
   enrollment: {
     // Ativar SOMENTE após integrar e auditar persistência, proteção e administração.
     demo: false, enabled: true, endpoint: '', privacyUrl: '#', termsUrl: '#', confirmationRule: 'Esta é uma pré-matrícula. A equipe entrará em contato para apresentar as condições e efetivar a matrícula. O envio não garante vaga nem confirma pagamento.', nextStep: 'Nossa equipe entrará em contato pelos dados informados para orientar você e efetivar a matrícula.'
