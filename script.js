@@ -4,6 +4,14 @@
   const $ = (selector) => document.querySelector(selector);
   const $$ = (selector) => [...document.querySelectorAll(selector)];
   const escape = (value) => String(value ?? '').replace(/[&<>"']/g, char => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[char]));
+  const enableScrollReveal = () => {
+    const items = $$('main > section, .course-card, .method-grid article, .founder-slide, .faq details');
+    items.forEach(item => item.classList.add('reveal-on-scroll'));
+    if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) { items.forEach(item => item.classList.add('is-visible')); return; }
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); } }), { threshold: .12, rootMargin: '0px 0px -40px' });
+    items.forEach(item => observer.observe(item));
+  };
+  enableScrollReveal();
   const url = (value) => { if (typeof value !== 'string' || !value.trim()) return ''; try { const parsed = new URL(value, location.href); return ['http:', 'https:'].includes(parsed.protocol) ? parsed.href : ''; } catch { return ''; } };
   const media = (src, alt, className = '') => `<img src="${escape(url(src))}" alt="${escape(alt)}" class="${className}" loading="lazy" width="600" height="450">`;
   const currency = value => new Intl.NumberFormat('pt-BR', {style:'currency', currency:'BRL'}).format(value);

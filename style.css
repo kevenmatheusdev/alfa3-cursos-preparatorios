@@ -4,6 +4,13 @@
 @media(max-width:370px){.container{width:calc(100% - 30px)}.course-grid{grid-template-columns:1fr}.course-card h3,.course-description,.course-tag{min-height:0}.hero-actions{gap:16px}.hero h1{font-size:38px}.header-cta{font-size:9px;padding-inline:9px}.editorial-title{font-size:34px}.team-art>div{font-size:32px}.form-grid{grid-template-columns:1fr}.form-actions{flex-direction:column}.progress li{gap:5px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 
+/* Acabamento visual e feedback suave ao navegar. */
+.reveal-on-scroll{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}.reveal-on-scroll.is-visible{opacity:1;transform:none}
+main section:nth-child(2n) .reveal-on-scroll{transition-delay:.04s}
+.course-card,.method-grid article,.faq details{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}.course-card:hover{transform:translateY(-5px);box-shadow:0 16px 34px #17171712;border-color:#cfcfc5}.method-grid article:hover{transform:translateY(-3px)}
+.button{will-change:transform}.button:active{transform:translateY(0) scale(.98)!important}
+@media(max-width:760px){.reveal-on-scroll{transform:translateY(12px);transition-duration:.5s}.course-card:hover,.method-grid article:hover{transform:none}.button{min-height:50px}.container{width:calc(100% - 36px)}input,select{min-height:50px}}
+
 /* Enquadramento do PNG oficial quadrado: preserva a arte e oculta só a margem externa. */
 .brand-image{display:block;position:relative;overflow:hidden;width:180px;aspect-ratio:3 / 1;background:#000}
 .brand .brand-image img{position:absolute;width:122%;max-width:none;height:auto;left:-10%;top:50%;transform:translateY(-52.3%);object-fit:contain}
