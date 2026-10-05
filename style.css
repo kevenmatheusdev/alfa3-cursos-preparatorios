@@ -139,6 +139,7 @@ footer .brand-image{width:210px}
 .footer-arrow{display:none!important}
 .footer-bottom{flex-wrap:wrap}.creator-credit{flex-basis:100%;width:100%;text-align:center;white-space:nowrap;font-size:12px;color:#9a9a9a;margin-top:8px}.creator-credit a{color:#fff;font-weight:700;text-decoration:none}.creator-credit a:hover{color:var(--gold);text-decoration:underline}
 @media(max-width:760px){.creator-credit{white-space:normal}}
+
 .location:after{content:'';position:absolute;left:50%;bottom:0;width:min(1200px,calc(100% - 80px));height:1px;transform:translateX(-50%);background:#dfe2d8}
 .faq{background:#fff;padding-top:128px}
 .faq:before{content:'DÚVIDAS FREQUENTES';display:block;width:min(1200px,calc(100% - 80px));margin:0 auto 52px;padding-top:20px;border-top:3px solid var(--gold);font-size:9px;letter-spacing:2px;font-weight:700;color:#74796d}
@@ -299,6 +300,7 @@ footer .brand-image{width:210px}
 .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
 @media(prefers-reduced-motion:no-preference){.founder-copy{animation:founder-enter .3s ease-out}.founder-photo-frame img{animation:founder-enter .35s ease-out}.founder-controls button{transition:background .18s,border-color .18s,color .18s}}
 @keyframes founder-enter{from{opacity:.3;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+
 @media(max-width:1050px){
  .founders-carousel{--panel-padding:28px;grid-template-columns:1fr 1fr}
  .founder-photo-frame{min-height:510px}
@@ -332,6 +334,47 @@ footer .brand-image{width:210px}
 @media(max-width:760px){
  .founder-photo-frame{height:auto;min-height:0;aspect-ratio:auto}
  .founder-photo-frame img{position:static;width:100%;height:auto;object-fit:contain}
+}
+
+/* Quem somos: fotografia ampla com painel editorial sobreposto. */
+.team-about{padding:72px 0 60px;background:#fff}
+.team-about+.team{padding-top:70px}
+.team-about>.container{width:min(1400px,calc(100% - 80px))}
+.team-about .founders-carousel{display:block;position:relative;min-height:540px;background:transparent;border:0;border-radius:0;overflow:visible;box-shadow:none}
+.team-about .founder-slide{display:grid;grid-template-columns:56% 44%;align-items:center;min-height:540px}
+.team-about .founder-photo-frame{grid-column:1;grid-row:1;display:block;position:relative;width:105%;height:auto;min-height:0;aspect-ratio:3/2;overflow:hidden;align-self:center;border:0;border-radius:10px;background:#eee;box-shadow:0 18px 42px #1112;z-index:1}
+.team-about .founder-photo-frame img{position:absolute;inset:0;display:block;width:100%;height:100%;max-height:none;object-fit:contain;object-position:center;border-radius:inherit}
+.team-about .founder-copy{grid-column:2;grid-row:1;align-self:center;min-width:0;min-height:0;margin-left:-3%;padding:36px 7% 34px 10%;background:#050505;color:#fff;z-index:2}
+.team-about .founder-copy .eyebrow{display:block;margin-bottom:12px;color:#fff;font-size:11px;letter-spacing:1.5px}
+.team-about .founder-copy .eyebrow:before{display:none}
+.team-about .founder-bio{max-width:490px;margin-top:0;margin-bottom:22px;color:#dedede;font-size:14px;line-height:1.75;white-space:normal}
+.team-about .about-topic{margin-top:8px}
+.team-about .about-topic h3{margin-bottom:2px;color:#fff;font-size:12px;line-height:1.35;letter-spacing:0}
+.team-about .about-topic p{max-width:520px;color:#d7d7d7;font-size:11.5px;line-height:1.48}
+.team-about .about-topic strong{color:#fff}
+.team-about .about-essence{padding-top:8px;border-top:1px solid #ffffff26}
+.team-about .team-button{min-width:168px;margin-top:4px;background:var(--gold);border-color:var(--gold);color:#000;text-transform:uppercase;letter-spacing:.2px}
+.team-about .team-button:hover{background:#ffe44d;border-color:#ffe44d}
+.team-about .founder-controls,.team-about .founder-status{display:none}
+@media(max-width:900px){
+ .team-about>.container{width:calc(100% - 48px)}
+ .team-about .founder-slide{grid-template-columns:55% 45%}
+ .team-about .founder-photo-frame{width:100%}
+ .team-about .founder-copy{padding:28px 6% 26px 10%}
+ .team-about .founder-bio{font-size:13px;margin-bottom:17px}
+}
+@media(max-width:760px){
+ .team-about{padding:55px 0 45px}
+ .team-about+.team{padding-top:55px}
+ .team-about .founders-carousel,.team-about .founder-slide{min-height:0}
+ .team-about .founder-slide{display:flex;flex-direction:column;align-items:stretch}
+ .team-about .founder-photo-frame{width:100%;height:auto;aspect-ratio:3/2;border-radius:10px 10px 0 0;box-shadow:none;z-index:1}
+ .team-about .founder-photo-frame img{position:absolute;width:100%;height:100%;object-fit:contain}
+ .team-about .founder-copy{min-height:0;margin:0;padding:35px 25px 38px;border-radius:0 0 10px 10px;z-index:2}
+ .team-about .founder-bio{font-size:13px;line-height:1.75;margin-bottom:18px}
+ .team-about .about-topic{margin-top:16px}
+ .team-about .about-topic h3{font-size:14px;margin-bottom:6px}
+ .team-about .about-topic p{font-size:12px;line-height:1.65}
 }
 
 /* Matrícula: apresentação de marca e formulário com leitura confortável. */
