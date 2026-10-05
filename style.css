@@ -453,6 +453,10 @@ footer .brand-image{width:210px}
  .enrollment .form-actions{flex-wrap:wrap}
  .enrollment .form-actions .button{flex:1;min-height:48px;font-size:12px}
 }
+/* Botão flutuante do WhatsApp: somente o símbolo. */
+.whatsapp-float{width:58px;height:58px;padding:0;display:grid;place-items:center;border-radius:50%;background:#25d366;border:3px solid #fff;box-shadow:0 3px 16px #0004;transition:transform .18s,box-shadow .18s}
+.whatsapp-float:hover{transform:translateY(-3px);box-shadow:0 6px 20px #0005}
+.whatsapp-float img{width:32px;height:32px;object-fit:contain}
 @media(max-width:370px){
  .enrollment .form-card{padding:23px 16px}
  .enrollment-form-caption{display:none}

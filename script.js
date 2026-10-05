@@ -96,7 +96,7 @@
   if (/^55\d{10,11}$/.test(whatsapp)) {
     const href = `https://wa.me/${whatsapp}`;
     contactLinks.push(`<a href="${href}" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>`);
-    const float = document.createElement('a'); float.className = 'whatsapp-float'; float.href = href; float.target = '_blank'; float.rel = 'noopener noreferrer'; float.textContent = 'Dúvidas? WhatsApp ↗'; document.body.append(float);
+    const float = document.createElement('a'); float.className = 'whatsapp-float'; float.href = href; float.target = '_blank'; float.rel = 'noopener noreferrer'; float.setAttribute('aria-label', 'Falar com a ALFA3 pelo WhatsApp'); float.innerHTML = '<img src="assets/whatsapp.png" alt="WhatsApp" width="32" height="32">'; document.body.append(float);
     new IntersectionObserver(entries => { float.hidden = entries[0].isIntersecting; }, {threshold:0}).observe($('#matricula'));
   }
   if (url(contacts.instagram)) contactLinks.push(`<a href="${escape(url(contacts.instagram))}" target="_blank" rel="noopener noreferrer">Instagram ↗</a>`);
