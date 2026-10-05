@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Administração · ALFA3</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="config.js" defer></script>
+  <script src="admin.js" defer></script>
+</head>
+<body class="admin-page">
+  <main class="admin-shell">
+    <section id="login-card" class="admin-card login-card">
+      <img class="admin-logo" src="assets/logo.png" alt="ALFA3 Cursos Preparatórios">
+      <p class="eyebrow">ALFA3 · ADMINISTRAÇÃO</p>
+      <h1>Entrar no painel</h1>
+      <p class="admin-muted">Acesso restrito à equipe da ALFA3.</p>
+      <form id="login-form">
+        <label for="admin-email">E-mail</label><input id="admin-email" type="email" required autocomplete="username">
+        <label for="admin-password">Senha</label><input id="admin-password" type="password" required autocomplete="current-password">
+        <button class="button full" type="submit"><span>Entrar</span><span aria-hidden="true">↗</span></button>
+        <p id="login-error" class="admin-error" role="alert"></p>
+      </form>
+    </section>
+    <section id="dashboard" hidden>
+      <header class="admin-header"><div><p class="eyebrow">ALFA3 · ADMINISTRAÇÃO</p><h1>Pré-matrículas</h1></div><button id="logout" class="button button-outline">Sair</button></header>
+      <div class="admin-toolbar"><input id="search" type="search" placeholder="Buscar por nome, e-mail, telefone ou modalidade..."><select id="status-filter"><option value="all">Todos os status</option><option value="Recebida">Pré-matriculados</option><option value="Matriculada">Matriculados</option></select></div>
+      <p id="admin-message" class="admin-muted"></p>
+      <div id="students-list" class="students-list"></div>
+    </section>
+  </main>
+</body>
+</html>
