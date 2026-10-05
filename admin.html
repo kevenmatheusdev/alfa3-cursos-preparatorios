@@ -18,9 +18,10 @@
       <h1>Entrar no painel</h1>
       <p class="admin-muted">Acesso restrito à equipe da ALFA3.</p>
       <form id="login-form">
-        <label for="admin-email">E-mail</label><input id="admin-email" type="email" required autocomplete="username">
-        <label for="admin-password">Senha</label><input id="admin-password" type="password" required autocomplete="current-password">
-        <button class="button full" type="submit"><span>Entrar</span><span aria-hidden="true">↗</span></button>
+        <label for="admin-email">E-mail</label><div class="admin-input"><span aria-hidden="true">✉</span><input id="admin-email" type="email" placeholder="seuemail@exemplo.com" required autocomplete="username"></div>
+        <div class="password-label"><label for="admin-password">Senha</label><button type="button" id="forgot-password">Esqueci minha senha</button></div>
+        <div class="admin-input"><span aria-hidden="true">♙</span><input id="admin-password" type="password" placeholder="Digite sua senha" required autocomplete="current-password"><button type="button" id="toggle-password" aria-label="Mostrar senha">◉</button></div>
+        <button class="button full admin-login-button" type="submit"><span>Entrar</span></button>
         <p id="login-error" class="admin-error" role="alert"></p>
       </form>
     </section>

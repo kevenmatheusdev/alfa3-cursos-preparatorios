@@ -14,6 +14,8 @@
   };
   async function load() { const { data, error } = await client.from('enrollments').select('*').order('created_at', { ascending: false }); if (error) { $('#admin-message').textContent = 'Não foi possível carregar os registros. Verifique as políticas RLS.'; return; } rows = data || []; render(); }
   $('#login-form').addEventListener('submit', async event => { event.preventDefault(); $('#login-error').textContent = ''; const { error } = await client.auth.signInWithPassword({ email: $('#admin-email').value, password: $('#admin-password').value }); if (error) $('#login-error').textContent = 'E-mail ou senha inválidos.'; else show(); });
+  $('#toggle-password').addEventListener('click', () => { const input = $('#admin-password'); const visible = input.type === 'text'; input.type = visible ? 'password' : 'text'; $('#toggle-password').setAttribute('aria-label', visible ? 'Mostrar senha' : 'Ocultar senha'); });
+  $('#forgot-password').addEventListener('click', async () => { const email = $('#admin-email').value.trim(); if (!email) { $('#login-error').textContent = 'Informe seu e-mail para receber o link de recuperação.'; return; } const { error } = await client.auth.resetPasswordForEmail(email, { redirectTo: `${location.origin}${location.pathname}` }); $('#login-error').textContent = error ? 'Não foi possível enviar o link.' : 'Link de recuperação enviado para seu e-mail.'; });
   async function show() { $('#login-card').hidden = true; $('#dashboard').hidden = false; await load(); }
   $('#logout').addEventListener('click', async () => { await client.auth.signOut(); $('#dashboard').hidden = true; $('#login-card').hidden = false; });
   $('#search').addEventListener('input', render); $('#status-filter').addEventListener('change', render);
