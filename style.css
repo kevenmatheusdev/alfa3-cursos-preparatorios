@@ -462,3 +462,7 @@ footer .brand-image{width:210px}
  .enrollment-form-caption{display:none}
  .enrollment .full{font-size:12px;padding-inline:13px;gap:10px}
 }
+/* No formulário, a UF aparece antes da cidade. */
+.form-grid>div:has(#state){grid-column:1}
+.form-grid>div:has(#city){grid-column:2}
+@media(max-width:650px){.form-grid>div:has(#state),.form-grid>div:has(#city){grid-column:1}}
