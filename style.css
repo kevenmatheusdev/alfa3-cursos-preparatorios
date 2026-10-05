@@ -457,6 +457,7 @@ footer .brand-image{width:210px}
 .whatsapp-float{width:58px;height:58px;padding:0;display:grid;place-items:center;border-radius:50%;background:#25d366;border:3px solid #fff;box-shadow:0 3px 16px #0004;transition:transform .18s,box-shadow .18s}
 .whatsapp-float:hover{transform:translateY(-3px);box-shadow:0 6px 20px #0005}
 .whatsapp-float img{width:32px;height:32px;object-fit:contain}
+@media(max-width:760px){.whatsapp-float{display:grid!important;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));width:56px;height:56px;z-index:1000}.whatsapp-float img{width:30px;height:30px}}
 @media(max-width:370px){
  .enrollment .form-card{padding:23px 16px}
  .enrollment-form-caption{display:none}
